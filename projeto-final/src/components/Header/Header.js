@@ -17,6 +17,8 @@ export default function Header(){
                 <span className="pe-5"><Nav.Link as={NavLink} to='/' >Home</Nav.Link></span>
                 <span className="pe-5"><Nav.Link as={NavLink} to='/login'>Login</Nav.Link></span>
                 <span className="pe-5"><Nav.Link as={NavLink} to='/about'>About</Nav.Link></span>
+                <span className="pe-5"><Nav.Link as={NavLink} to='/cadastro'>Cadastro</Nav.Link></span>
+                <span className="pe-5"><Nav.Link as={NavLink} to='/consulta'>Consulta</Nav.Link></span>
             </Nav>
         </Container>
     </Navbar>
