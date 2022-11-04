@@ -57,7 +57,9 @@ export function Home(){
                             return (
                             <Col >
                                 <Card  style={{ width: '18rem' }}>
-                                    <Card.Img variant="top" src={o.imagemUrl} />
+                                    <div className="ratio" style={{"--bs-aspect-ratio": '140%'}}>
+                                    <Card.Img variant="top" src={o.imagemUrl}/>
+                                    </div>
                                     <Card.Body>
                                         <Card.Title>{o.nome}</Card.Title>
                                         <Card.Text style={{ height:'200px' }}>
