@@ -1,11 +1,13 @@
-
+import { CarrinhoProvider } from "./contexts/CarrinhoContext";
 import {Rotas} from "./routes"
 import './index.css'
 
 function App() {
   return (
   <>
-    <Rotas></Rotas>
+    <CarrinhoProvider>
+     <Rotas></Rotas>
+    </CarrinhoProvider>
   </>);
 }
 

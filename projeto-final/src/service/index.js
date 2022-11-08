@@ -11,3 +11,4 @@ export async function getProdutos(){
 
     return produtos
 }
+
