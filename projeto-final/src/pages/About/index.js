@@ -1,74 +1,76 @@
-import {useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
-
+import axios from "axios";
 
 import Header from "../../components/Header/Header";
 
-import api from '../../server/api';
-
-import Container  from 'react-bootstrap/Container';
-import Col  from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Produto from '../../components/Produto/Produto';
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import Footer from "../../components/Footer/Footer";
+import styled from "styled-components";
 
-export function About(){
+export function About() {
+  const [listaIntegrantes, setListaIntegrantes] = useState([]);
 
-    const [listaProduto,setListaProduto] = useState([])
+  useEffect(() => {
+    axios
+      .get(`https://mocki.io/v1/8a880354-63ba-4e03-9a30-d13c917e87f7`)
+      .then(({ data }) => {
+        setListaIntegrantes(data);
+      });
+  }, []);
 
+  const Container = styled.div`
+    display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          margin: 0 auto;
+          width: 90%;
+          flex-wrap: wrap;
+          margin: 100px auto;
+  `;
 
+  const CardContainer = styled.div`
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+  `;
 
-    useEffect(() => {
-    
-        api.get("produto/all").then(({data}) => {
-            setListaProduto(data)
-        })
-        console.log()
-    
-    }, []);
+  const Imagem = styled.img`
+    border: none;
+    border-radius: 50%; 
+    width: 150px;
+  `;
 
+  const Link = styled.a`
+    text-decoration: none;
+    color: grey;
+  `
 
-    return (<>
-        <Header></Header>
+  return (
+    <>
+      <Header></Header>
 
-        <Container className="mt-5 p-2">
-            <Row>
-                <Col className="p-5">
-                    <Row xs={4} md={8} className="g-4 p-2">
-                        {listaProduto.map( o => {      
-                            return (
-                            <Col >
-                                <Card  style={{ width: '18rem' }}>
-                                    <Card.Img variant="top" src={o.imagemUrl} />
-                                    <Card.Body>
-                                        <Card.Title>{o.nome}</Card.Title>
-                                        <Card.Text style={{ height:'200px' }}>
-                                            <span>Descrição:</span>
-                                            <br/>
-                                            <span>{o.descricao}</span>
-                                        </Card.Text>
-                                        <Button variant="primary">Ok</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                            )})
-                        }
-                    </Row>
-                </Col>             
-            </Row>
-            
+      <Container>
+        {listaIntegrantes.map((o) => {
+          return (
+            <CardContainer>
+              <Imagem src={o.avatar}></Imagem>
+              <h3>{o.nome}</h3>
+              <Link href={o.html}>Github</Link>
+            </CardContainer>
+          );
+        })}
+      </Container>
 
-
-
-
-
-        </Container>
-
-        <div className="home-footer position-relative top-100">
-            <Footer></Footer>
-        </div>
-       
-    </>)
+      <div className="home-footer position-relative top-100">
+        <Footer></Footer>
+      </div>
+    </>
+  );
 }

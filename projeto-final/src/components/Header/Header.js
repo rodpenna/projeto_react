@@ -31,10 +31,10 @@ export default function Header(props){
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={NavLink} to='/' >Home</Nav.Link>
-            <Nav.Link as={NavLink} to='/login'>Login</Nav.Link>
+            {/* <Nav.Link as={NavLink} to='/login'>Login</Nav.Link> */}
             <Nav.Link as={NavLink} to='/about'>About</Nav.Link>
-            <Nav.Link as={NavLink} to='/cadastro'>Cadastro</Nav.Link>
-            <Nav.Link as={NavLink} to='/consulta'>Consulta</Nav.Link>
+            {/* <Nav.Link as={NavLink} to='/cadastro'>Cadastro</Nav.Link>
+            <Nav.Link as={NavLink} to='/consulta'>Consulta</Nav.Link> */}
             <Nav.Link as={NavLink} to='/carrinho'>
               Carrinho
               {countCartItems ? (<button className="badge">{countCartItems}</button>) : ("")}
