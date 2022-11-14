@@ -56,12 +56,12 @@ export const Rotas = (props) =>{
     return(
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home
+          <Route path="/home" element={<Home
             cartItems={cartItems}
             onAdd={onAdd} 
             onRemove={onRemove} 
           />}/>
-          <Route path="/login" element={<Login/>}/>   
+          <Route path="/" element={<Login/>}/>   
           <Route path="/about" element={<About/>}/>
           <Route path="/cadastro" element={<Cadastro/>}/>
           <Route path="/consulta" element={<Consulta/>}/>

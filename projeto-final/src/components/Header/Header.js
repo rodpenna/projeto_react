@@ -26,13 +26,13 @@ export default function Header(props){
     </Navbar> */}
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="/">Ecommerce</Navbar.Brand>
+        <Navbar.Brand href="/home">Ecommerce</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={NavLink} to='/' >Home</Nav.Link>
+            <Nav.Link as={NavLink} to='/home' >Home</Nav.Link>
             {/* <Nav.Link as={NavLink} to='/login'>Login</Nav.Link> */}
-            <Nav.Link as={NavLink} to='/about'>About</Nav.Link>
+            <Nav.Link as={NavLink} to='/about'>Sobre</Nav.Link>
             {/* <Nav.Link as={NavLink} to='/cadastro'>Cadastro</Nav.Link>
             <Nav.Link as={NavLink} to='/consulta'>Consulta</Nav.Link> */}
             <Nav.Link as={NavLink} to='/carrinho'>

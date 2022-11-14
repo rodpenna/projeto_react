@@ -9,7 +9,7 @@ export function Login(){
     const Navigate = useNavigate()
 
     const handleLogin = () => {
-        Navigate ("/cadastro")
+        Navigate ("/home")
     }
 
     return (
